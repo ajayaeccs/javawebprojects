@@ -28,6 +28,19 @@
         <servlet-name>second</servlet-name>
         <url-pattern>/secondweb</url-pattern>
     </servlet-mapping>
+    
+    <!-- servlet declarations -->
+    <servlet>
+        <servlet-name>third</servlet-name>
+        <servlet-class>com.servlet.ThirdServlet</servlet-class>
+    </servlet>
+    
+    <!-- mapping -->
+    <servlet-mapping>
+        <servlet-name>third</servlet-name>
+        <url-pattern>/thirdweb</url-pattern>
+    </servlet-mapping>
+    
     <session-config>
         <session-timeout>
             30
