@@ -7,6 +7,7 @@ package com.practice;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -37,8 +38,17 @@ public class RegisterServlet extends HttpServlet{
             out.print("<h3>Email: "+user_email+"</h3>");
             out.print("<h3>Gender: "+user_gender+"</h3>");
             out.print("<h3>Course: "+user_course+"</h3>");
+            
+            //Do databse operations here
+            
+            RequestDispatcher rd = req.getRequestDispatcher("success");
+            rd.forward(req, resp);
+            
         }else{
             out.print("<h3>You have not accepted the terms and condition</h3>");
+            
+            RequestDispatcher rd = req.getRequestDispatcher("index.html");
+            rd.include(req, resp);
         }
         
     }
